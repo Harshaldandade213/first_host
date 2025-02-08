@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+        <h2>BMI Calculator</h2>
+        <input type="number" id="weight" placeholder="Enter weight (kg)" required>
+        <input type="number" id="height" placeholder="Enter height (m)" required>
+        <button id="submit" type="submit">submit</button>
+        
+        
+        <p id="result">c</p>
+    </form>
+    </div>
+
+    <script>
+        // let result_s=document.body.getElementById('result');
+        
+        document.addEventListener("DOMContentLoaded", function(){
+            let height = document.getElementById('height');
+            let weight = document.getElementById("weight"); 
+            let result= 0;
+            
+            document.getElementById('submit').addEventListener('click', function (e) {
+                console.log(height.value);
+                console.log(weight.value);
+                result =  (weight.value/ ((height.value/100)**2)).toFixed(2);
+                console.log(result);
+                document.getElementById("result").innerHTML=result;
+
+                e.preventDefault();
+
+               // document.querySelector("result").innerHTML='a';
+
+
+               
+            });
+        })
+        
+        
+
+        console.log(height.value);
+    </script>
+</body>
+</html>
